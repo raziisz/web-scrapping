@@ -15,10 +15,10 @@ Garimpar dados de outros web sites
  ## Desafios
 
  - [x] Criar o backend que irá se conectar com o instagram
- - [] Garimpar os dados
- - [] Preparar os dados
- - [] Salvar os dados em um arquivo local
- - [] Consumir os dados do nosso arquivo local
+ - [x] Garimpar os dados
+ - [x] Preparar os dados
+ - [x] Salvar os dados em um arquivo local
+ - [x] Consumir os dados do nosso arquivo local
 
  ## Next level
 
