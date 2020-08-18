@@ -7,32 +7,63 @@
 </head>
 <body>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #F0F0F5;
+      -webkit-font-smoothing: antialiased;
+      color: #6C6C80;
+    }
     .container {
       display: flex;
       gap: .4rem;
+      flex-wrap: wrap;
+    }
+    h3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     li {
       list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.712);
+      padding: 5px;
+      width: 400px;
+      height: 400px;
     }
     li img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      width: 300px;
+      height: 300px;
+      object-fit: fill;
+      display: block;
+    }
+    li strong {
+      margin-top: 1.6rem;
+      overflow: hidden;
+      font-size: .9rem;
     }
   </style>
 
+  <h3>Web Scrapping</h3>
   <div class="container">
-
   </div>
   <script>
     (async () => {
       // abrir o arquivo de dados (json)
-      const response = await fetch('./instagram.json')
+      const response = await fetch('./olx.json')
       const data = await response.json();
 
       // formatar os dados para enviar para o html
       const htmlList = data
-        .map( ({src}) => `<li><img src="${src}" /></li>`)
+        .map( content => `<li><img src="${content.src}" /><strong>${content.title}</strong></li>`)
         .join('');
 
       // colocar no html
